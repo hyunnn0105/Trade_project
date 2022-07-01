@@ -16,7 +16,7 @@ public class Trade {
     private String postMethod;
     private String postAddr;
     // integer = 값존재X -> null
-    private Integer postNum;
+    private String postNum;
 
 
 }

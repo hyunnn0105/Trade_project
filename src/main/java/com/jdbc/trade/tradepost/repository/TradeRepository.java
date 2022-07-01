@@ -9,16 +9,16 @@ public interface TradeRepository {
     boolean inputinformation(Trade trade);
 
     // 2. 전체조회하기
-    Map<Integer,String> findAll();
+    Map<Integer,Trade> findAll();
 
     // 3. 특정인물 조회하기
-    boolean findSomeone(int traNu);
+    Trade findSomeone(int traNu);
 
     //배송방법별로 조회?
 //    boolean findPostaddr(String postMethod);
 
     // 4. 운송장번호 업데이트하기
-    boolean updatePostNum(int postNum);
+    boolean updatePostNum(String postnum, int tranu);
 
     // 5. 삭제하기
     boolean delete(int traNu);
