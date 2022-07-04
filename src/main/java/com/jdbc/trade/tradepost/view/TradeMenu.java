@@ -187,6 +187,7 @@ public class TradeMenu {
         String s;
         while (true){
             System.out.print(msg);
+            sc.nextLine();
             s = sc.nextLine();
             break;
         }
