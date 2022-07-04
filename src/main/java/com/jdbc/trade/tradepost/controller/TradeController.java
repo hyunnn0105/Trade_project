@@ -31,7 +31,7 @@ public class TradeController {
 
         // db 저장
        boolean result = tradeRepository.inputinformation(trade);
-        System.out.println("result = " + result);
+//        System.out.println("result = " + result);
     }
 
     public List<Trade> findAllinformation(){

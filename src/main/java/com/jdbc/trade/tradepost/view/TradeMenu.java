@@ -74,6 +74,7 @@ public class TradeMenu {
 
     private void updatePostNum() {
         System.out.println("========= 운송장번호 등록하기 ===========");
+        System.out.println("운송장 번호를 등록할 번호를 입력하세요");
         int num = inputN(">> ");
 
         if (tradeController.findSomeinfor(num) != null){
@@ -100,12 +101,6 @@ public class TradeMenu {
 
         System.out.println("-------------------------------------------- 조회결과 ----------------------------------------");
         System.out.println("번호      이름    종류      가격     휴대폰번호    배송방법                 주소                     운송장번호");
-        /*
-        for (int i = 0; i < trades.size(); i++) {
-            System.out.println(trades.get(i));
-        }
-
-         */
 
         for (Trade t : trades) {
             System.out.printf( "%4d | %4s | %4s | %6d | %11s | %4s | %30s | %15s\n"
@@ -143,7 +138,6 @@ public class TradeMenu {
 
         System.out.println("================================");
         System.out.println("배송정보 추가");
-        System.out.println();
         int number = inputN("번호 : ");
         if (tradeController.findSomeinfor(number)!=null){
             System.out.println("이미 존재하는 번호입니다. 다시 입력해주세요");
@@ -155,7 +149,7 @@ public class TradeMenu {
         String phone = inputS("휴대폰 번호('-'없이 입력하세요) : ");
         String postMethod = inputS("배송방법 : ");
         String postAddr = inputS("주소 : ");
-        String postNum = inputS("운송장번호 : ");
+        String postNum = inputS("등록할 운송장번호가 없으면 0을 입력하세요\n운송장번호 : ");
 
 
         Trade trade = new Trade();
@@ -190,8 +184,13 @@ public class TradeMenu {
     }
 
     private String inputS(String msg) {
-        System.out.printf(msg);
+        String s;
+        while (true){
+            System.out.print(msg);
+            s = sc.nextLine();
+            break;
+        }
         // nextline으로 해야 띄어쓰기해도 안넘어간다....
-        return sc.nextLine();
+        return s;
     }
 }

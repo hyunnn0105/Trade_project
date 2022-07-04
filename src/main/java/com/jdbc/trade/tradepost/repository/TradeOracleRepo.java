@@ -44,7 +44,7 @@ public class TradeOracleRepo implements TradeRepository{
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         }
         return false;
     }
