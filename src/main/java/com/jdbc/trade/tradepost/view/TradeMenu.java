@@ -98,12 +98,21 @@ public class TradeMenu {
 
         System.out.println("========= 모든 회원 정보 ============\n");
 
-        System.out.printf("%s%d%d%s%d%d%d%d\n", "번호", "이름", "종류", "가격", "휴대폰 번호", "배송방법", "주소", "운송장번호");
         System.out.println("-------------------------------------------- 조회결과 ----------------------------------------");
-        for (Trade t : trades) {
-            System.out.println(t.getTraNu() + t.getTraNm() + t.getItem() + t.getPrice() + t.getTraPhone() + t.getPostMethod()
-            + t.getPostAddr() + t.getPostNum());
+        System.out.println("번호      이름    종류      가격     휴대폰번호    배송방법                 주소                     운송장번호");
+        /*
+        for (int i = 0; i < trades.size(); i++) {
+            System.out.println(trades.get(i));
         }
+
+         */
+
+        for (Trade t : trades) {
+            System.out.printf( "%4d | %4s | %4s | %6d | %11s | %4s | %30s | %15s\n"
+                    ,t.getTraNu() ,t.getTraNm() ,t.getItem() ,t.getPrice() ,t.getTraPhone() ,t.getPostMethod()
+            ,t.getPostAddr() ,t.getPostNum());
+        }
+
 
 
     }
@@ -161,7 +170,7 @@ public class TradeMenu {
 
         tradeController.insetinfor(trade);
 
-        System.out.printf("\n %d번 %s 님이 저장되었습니다.", number, name);
+        System.out.println(number + "번" + name +"님이 저장되었습니다.");
 
     }
 
@@ -182,6 +191,7 @@ public class TradeMenu {
 
     private String inputS(String msg) {
         System.out.printf(msg);
-        return sc.next();
+        // nextline으로 해야 띄어쓰기해도 안넘어간다....
+        return sc.nextLine();
     }
 }

@@ -40,8 +40,8 @@ public class TradeController {
         tradeMap = data;
 
         List<Trade> tradeList = new ArrayList<>();
-        for (Trade trade : tradeList) {
-            tradeList.add(data.get(trade));
+        for (Integer tradeNum : tradeMap.keySet()) {
+            tradeList.add(data.get(tradeNum));
         }
         return tradeList;
 

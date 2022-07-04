@@ -74,7 +74,7 @@ class TradeOracleRepoTest {
             System.out.println(tradeMap.get(i));
         }
 
-        assertEquals(tradeMap.size(),5);
+        assertEquals(tradeMap.size(),9);
     }
 
 }

@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-
+// sql은 여기서만 하자!
 public class TradeOracleRepo implements TradeRepository{
 
     @Override
@@ -77,7 +77,7 @@ public class TradeOracleRepo implements TradeRepository{
             return tradeMap;
 
         } catch (Exception e){
-            e.printStackTrace();
+//            e.printStackTrace();
             return Collections.emptyMap();
         }
     }
