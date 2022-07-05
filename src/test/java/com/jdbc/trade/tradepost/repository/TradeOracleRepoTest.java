@@ -16,17 +16,17 @@ class TradeOracleRepoTest {
     @DisplayName("값이 들어가야한다")
     void inputTest(){
         Trade ko = new Trade();
-        ko.setTraNu(10);
-        ko.setTraNm("가가가");
+        ko.setTraNu(5);
+        ko.setTraNm("라라라");
         ko.setItem("장난감");
         ko.setPostMethod("택배");
         ko.setPrice(13000);
         ko.setTraPhone("01011112222");
         ko.setPostAddr("경기도 의왕시 00동 00길 00아파트 000동 000호");
-//        ko.setPostNum("");
+        ko.setPostNum("");
 
         boolean inputtest = repository.inputinformation(ko);
-        assertEquals(true, inputtest);
+        assertFalse(!inputtest);
     }
 
     @Test

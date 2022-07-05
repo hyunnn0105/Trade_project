@@ -163,11 +163,13 @@ public class TradeMenu {
         trade.setPostNum(postNum);
 
         tradeController.insetinfor(trade);
-        if (tradeController.insetinfor(trade) == true){
+
+        if (tradeController.findSomeinfor(number) != null){
             System.out.println(number + "번" + name +"님이 저장되었습니다.");
         } else {
             System.out.println("저장 실패");
         }
+
 
 
     }
@@ -192,7 +194,6 @@ public class TradeMenu {
         String s;
         while (true){
             System.out.print(msg);
-            sc.nextLine();
             s = sc.nextLine();
             break;
         }

@@ -25,14 +25,13 @@ public class TradeController {
         tradeMap = new HashMap<>();
     }
 
-    public boolean insetinfor(Trade trade){
+    public void insetinfor(Trade trade){
         // 메모리 저장
         tradeMap.put(trade.getTraNu(), trade);
 
         // db 저장
        boolean result = tradeRepository.inputinformation(trade);
 //        System.out.println("result = " + result);
-        return result;
     }
 
     public List<Trade> findAllinformation(){
