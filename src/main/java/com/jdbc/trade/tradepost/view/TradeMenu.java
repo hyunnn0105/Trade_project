@@ -174,6 +174,7 @@ public class TradeMenu {
             try {
                 System.out.print(msg);
                 n = sc.nextInt();
+                sc.nextLine();
                 break;
             } catch (Exception e) {
                 sc.nextLine();
