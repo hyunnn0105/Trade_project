@@ -152,9 +152,6 @@ public class TradeMenu {
         String postMethod = inputS("배송방법 : ");
         String postAddr = inputS("주소 : ");
         String postNum = inputS("등록할 운송장번호가 없으면 0을 입력하세요\n운송장번호 : ");
-        if (postNum == "0") {
-            postNum = null; // 작동X
-        }
 
 
         Trade trade = new Trade();
