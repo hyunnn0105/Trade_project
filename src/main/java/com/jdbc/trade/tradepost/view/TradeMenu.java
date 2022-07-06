@@ -114,6 +114,7 @@ public class TradeMenu {
 
     private void findsomeinfor() {
         System.out.println("조회할 회원의 번호를 입력하세요.");
+        System.out.println( "기입된 회원의 수는 "+ tradeController.findAllinformation().size() + " 명 입니다.");
         int num = inputN(">> ");
 
         Trade trade = tradeController.findSomeinfor(num);
@@ -135,13 +136,14 @@ public class TradeMenu {
 
     private void insetinformation() {
 
-
         System.out.println("================================");
         System.out.println("배송정보 추가");
+        System.out.println( "기입된 회원의 수는 "+ tradeController.findAllinformation().size() + " 명 입니다.");
         int number = inputN("번호 : ");
         if (tradeController.findSomeinfor(number)!=null){
             System.out.println("이미 존재하는 번호입니다. 다시 입력해주세요");
-            return;
+            number = sc.nextInt();
+            number = inputN("번호 : ");
         }
         String name = inputS("이름 : ");
         String item = inputS("종류 : ");
@@ -150,6 +152,9 @@ public class TradeMenu {
         String postMethod = inputS("배송방법 : ");
         String postAddr = inputS("주소 : ");
         String postNum = inputS("등록할 운송장번호가 없으면 0을 입력하세요\n운송장번호 : ");
+        if (postNum == "0") {
+            postNum = null; // 작동X
+        }
 
 
         Trade trade = new Trade();
@@ -165,7 +170,7 @@ public class TradeMenu {
         tradeController.insetinfor(trade);
 
         if (tradeController.findSomeinfor(number) != null){
-            System.out.println(number + "번" + name +"님이 저장되었습니다.");
+            System.out.println(number + "번 " + name +"님이 저장되었습니다.");
         } else {
             System.out.println("저장 실패");
         }
@@ -180,7 +185,7 @@ public class TradeMenu {
             try {
                 System.out.print(msg);
                 n = sc.nextInt();
-                sc.nextLine();
+                sc.nextLine(); // 비워주기
                 break;
             } catch (Exception e) {
                 sc.nextLine();
